@@ -1,5 +1,6 @@
 import bpy
 import os
+from converter import *
 
 '''
 api doc : https://docs.blender.org/manual/en/latest/

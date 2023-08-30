@@ -48,7 +48,8 @@ def save_json(file_ref: str, data: dict):
 
 def save_csv(file_ref: str, data: dict):
     df = pd.DataFrame(data)
-    df.to_csv(file_ref, header=None, index=False, encoding="utf-8-sig")
+    print(df)
+    df.to_csv(file_ref, header=True, index=False, encoding="utf-8-sig")
 
 
 def output_file(file_path:str, file_name:str, dict_data):

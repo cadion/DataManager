@@ -5,30 +5,29 @@ file_path = ""
 file_name = ""
 
 if True:
+    print("---------------------------------")
     path = input("Press Enter the path file path:")
     path = path_correction(path)
-    #path = "C:/Users/dragon_kim/Desktop/Fork/design_data/table/src/ncpcostumeitem.xlsx" # 해제 예정
 
     file_path = os.path.dirname(path)
     file_path += "/"
     file_name = os.path.basename(path)
     file_name = file_name.split(".")[0]
 
-    if (path[len(path)-4:len(path)] == "xlsx"):
-        print("you select excel file")
-        dict_data = read_xlsx(path)
-    elif (path[len(path)-3:len(path)] == "csv"):
-        print("you select csv file")
-        dict_data = read_csv(path)
-    elif (path[len(path)-4:len(path)] == "json"):
-        print("you select json file")
-        dict_data = read_json(path)
-    else:
-        print("unknown extension")
-        exit()
+    while True:
+        print("--------------------------")
+        if (path[len(path)-4:len(path)] == "xlsx"):
+            dict_data, file_name = read_xlsx(path)
+        elif (path[len(path)-3:len(path)] == "csv"):
+            dict_data = read_csv(path)
+        elif (path[len(path)-4:len(path)] == "json"):
+            dict_data = read_json(path)
+        else:
+            print("unknown extension")
+            exit()
 
 
-    output_file(file_path, file_name, dict_data)
+        output_file(file_path, file_name, dict_data)
 
 
     # result = read_xlsx(path)

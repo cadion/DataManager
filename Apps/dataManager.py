@@ -1,8 +1,13 @@
 import os
+import sys
 from converter import *
 
 file_path = ""
 file_name = ""
+
+
+for arg in sys.argv[1:]:
+    print(arg)
 
 if True:
     print("---------------------------------")

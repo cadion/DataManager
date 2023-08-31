@@ -1,7 +1,10 @@
 import os
 import math
 import json
-from pandas.__init__ import pandas as pd
+import openpyxl
+import pandas as pd
+#from pandas.__init__ import pandas as pd
+#어차피 pandas 내부에서 다른 library 참고하고있어서, 독립환경으로는 안됨 ( numpy 등 )
 from enum import Enum
 import warnings
 

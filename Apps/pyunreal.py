@@ -57,8 +57,6 @@ def get_data_asset(asset):
     dict_data = {}
 
 
-
-
 def print_selected_data_asset():
     asset = get_selected_asset()
     unreal.log(type(asset))
@@ -83,3 +81,29 @@ def dummy():
     column_name = 0 # column name in dt
     unreal.DataTableFunctionLibrary.get_data_table_row_names(data_table) #data_table 내 Row Names, 무조건 string으로
     unreal.DataTableFunctionLibrary.get_data_table_column_as_string(data_table, column_name) #data_table 내 Column Names, 무조건 string으로
+
+#region import_asset ( png 파일등 단순 import 가능한거 )
+
+texture_tga = "C:/Users/ugc00/Desktop/home/Group_2.png"
+
+def importMyAssets():
+    texture_task = buildImportTask(texture_tga, '/Game/Textures', 'MyTexture')
+    executeImportTasks([texture_task])
+
+def buildImportTask(filename, destination_path, destination_name):
+    task = unreal.AssetImportTask()
+    task.set_editor_property('automated', True)
+    task.set_editor_property('destination_name', destination_name)
+    task.set_editor_property('destination_path', destination_path)
+    task.set_editor_property('filename', filename)
+    task.set_editor_property('replace_existing', True)
+    return task
+
+def executeImportTasks(tasks):
+    unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks(tasks)
+    for task in tasks:
+        for path in task.get_editor_property('imported_object_paths'):
+            unreal.log('Imported: {}'.format(path))
+
+#endregion
+

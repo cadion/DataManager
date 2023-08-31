@@ -1,7 +1,7 @@
 import os
 import math
 import json
-import pandas as pd
+from pandas.__init__ import pandas as pd
 from enum import Enum
 import warnings
 

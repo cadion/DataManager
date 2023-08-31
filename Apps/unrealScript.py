@@ -1,4 +1,5 @@
 import unreal
+import unreal as ue
 import os
 from converter import *
 
@@ -10,13 +11,15 @@ from converter import *
 4. Interpreter.Dropbox.ShowAll
 5. FileTree Icon
 6. Add %PythonStub%
+7. in UE editor
+    7-1. import unreal
+    
 
 api doc : https://docs.unrealengine.com/4.27/en-US/PythonAPI/
 '''
 
 
 
-
-
-if __name__ == '__unrealScript__':
-    print("Hello Unreal!")
+unreal.log("Hello Unreal!")
+def say_hi():
+    unreal.log("Hello Unreal!")

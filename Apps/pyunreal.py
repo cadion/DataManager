@@ -12,6 +12,7 @@ import os
 4. Interpreter.Dropbox.ShowAll
 5. FileTree Icon
 6. Add %PythonStub%
+    6-1. In Pycharm, Help > Edit Custom Properties > idea.max.intellisense.filesize=25000
 7. in UE editor
     7-1. import unreal
     7-2. import unrealScript as us
